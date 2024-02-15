@@ -1,6 +1,9 @@
 package com.example.embedded_debezium_proj;
 
+import com.example.embedded_debezium_proj.service.RedisService;
 import io.debezium.data.Envelope;
+import org.apache.commons.lang3.ObjectUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ public class CustomerService {
     long number_of_CRUD_operations = 1000000;
     public void replicateData(Map<String, Object> payload, Envelope.Operation operation) {
 
+//        String s= {group={table_name}, key = {book_id=1},value = {book_id=1,name=amba yaluwo}}
 
         performance_times.add(1L);
 
